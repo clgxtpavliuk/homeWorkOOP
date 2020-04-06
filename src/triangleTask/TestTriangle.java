@@ -8,7 +8,7 @@ public class TestTriangle {
             Point c = new Point(6,7);
             Triangle t = new Triangle(a, b, c);
             System.out.println(t.getArea());
-        } catch (SelfIntersectingTriangleExeption e) {
+        } catch (SelfIntersectingTriangleException e) {
             System.out.println("Triangle is self-intersection");
         }
 

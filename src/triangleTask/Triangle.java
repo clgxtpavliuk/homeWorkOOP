@@ -11,9 +11,9 @@ public class Triangle {
         caSide = Math.sqrt((a.x - c.x)*(a.x - c.x) + (a.y - c.y)*(a.y - c.y));
     }
 
-    public double getArea () throws SelfIntersectingTriangleExeption {
+    public double getArea () throws SelfIntersectingTriangleException {
         if (abSide >= bcSide + caSide || bcSide >= abSide + caSide || caSide >= abSide + bcSide) {
-throw new SelfIntersectingTriangleExeption();
+throw new SelfIntersectingTriangleException();
         } else {
             double halfPerimeter = (abSide + bcSide + caSide) / 2;
             return Math.sqrt(halfPerimeter * (halfPerimeter - abSide) * (halfPerimeter - bcSide) * (halfPerimeter - caSide));
