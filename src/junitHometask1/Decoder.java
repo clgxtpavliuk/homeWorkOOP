@@ -1,7 +1,6 @@
-package hometask3.stringTask;
+package junitHometask1;
 
 public class Decoder {
-    private String inputString;
 
     public void validate(String inputString) {
         int counter = 1;
