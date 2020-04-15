@@ -1,4 +1,4 @@
-package hometask3.linkedListTask;
+package junitHometask2;
 
 public class Item <V>{
     public V value;

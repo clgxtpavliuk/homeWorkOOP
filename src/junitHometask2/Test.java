@@ -1,4 +1,4 @@
-package hometask3.linkedListTask;
+package junitHometask2;
 
 public class Test {
     public static void main (String[] args) {

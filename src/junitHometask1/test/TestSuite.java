@@ -8,6 +8,6 @@ import org.junit.runners.Suite;
         RLETest.class,
         DecoderTest.class
 })
-public class CalcSuite {
+public class TestSuite {
 
 }

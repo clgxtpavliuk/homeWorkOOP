@@ -1,8 +1,8 @@
-package hometask3.linkedListTask;
+package junitHometask2;
 
 public class LinkedList<V> {
     private Item<V> tail;
-    int count;
+    private int count;
 
     public LinkedList() {
         this.tail = null;
@@ -20,7 +20,7 @@ public class LinkedList<V> {
         this.tail = newValue;
     }
 
-    public V remove(int index) {
+    public void remove(int index) {
         Item<V> needValue;
         int number = count - index - 1;
         needValue = tail;
@@ -29,8 +29,12 @@ public class LinkedList<V> {
             number--;
         }
         if (index == 0) {
-            needValue.next.prev = null;
-            count--;
+            if (count > 1) {
+                needValue.next.prev = null;
+                count--;
+            } else {
+                tail = null;
+                count --;}
         } else if (index == count-1) {
             tail = tail.prev;
             tail.next = null;
@@ -40,7 +44,6 @@ public class LinkedList<V> {
             needValue.next.prev = needValue.prev;
             count--;
         }
-        return needValue.value;
     }
 
     public V get(int index) {
@@ -77,7 +80,7 @@ public class LinkedList<V> {
         return sb.toString();
     }
 
-    public boolean hasNext(Item item) {
+    private boolean hasNext(Item item) {
         boolean result = false;
         if (item.next != null) {
             result = true;
@@ -85,7 +88,7 @@ public class LinkedList<V> {
         return result;
     }
 
-    public boolean hasPrev(Item item) {
+    private boolean hasPrev(Item item) {
         boolean result = false;
         if (item.prev != null) {
             result = true;
