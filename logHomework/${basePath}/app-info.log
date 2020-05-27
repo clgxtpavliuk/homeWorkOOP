@@ -1,0 +1,49 @@
+[CUSTOMER] 2020-05-27 13:42:10.151 [main]  - The application started
+[WARN ] 2020-05-27 13:42:10.159 [main]  - Incorrect sex Boy
+[WARN ] 2020-05-27 13:42:10.160 [main]  - Incorrect number of children -4
+[WARN ] 2020-05-27 13:42:10.160 [main]  - Incorrect domestic animal Dear
+[INFO ] 2020-05-27 13:42:10.161 [main]  - Citizen John Doe added
+[INFO ] 2020-05-27 13:42:10.161 [main]  - Citizen Vasia Pupkin added
+[INFO ] 2020-05-27 13:42:10.161 [main]  - Citizen Jane Air added
+[CUSTOMER] 2020-05-27 16:48:30.900 [main]  - The application started
+[WARN ] 2020-05-27 16:48:30.913 [main]  - Incorrect sex Boy
+[WARN ] 2020-05-27 16:48:30.918 [main]  - Incorrect number of children -4
+[WARN ] 2020-05-27 16:48:30.919 [main]  - Incorrect domestic animal Dear
+[INFO ] 2020-05-27 16:48:30.919 [main]  - Citizen John Doe added
+[INFO ] 2020-05-27 16:48:30.919 [main]  - Citizen Vasia Pupkin added
+[INFO ] 2020-05-27 16:48:30.920 [main]  - Citizen Jane Air added
+[CUSTOMER] 2020-05-27 16:49:52.444 [main]  - The application started
+[WARN ] 2020-05-27 16:49:52.458 [main]  - Incorrect sex Boy
+[WARN ] 2020-05-27 16:49:52.461 [main]  - Incorrect number of children -4
+[WARN ] 2020-05-27 16:49:52.461 [main]  - Incorrect domestic animal Dear
+[INFO ] 2020-05-27 16:49:52.462 [main]  - Citizen John Doe added
+[INFO ] 2020-05-27 16:49:52.462 [main]  - Citizen Vasia Pupkin added
+[INFO ] 2020-05-27 16:49:52.462 [main]  - Citizen Jane Air added
+[CUSTOMER] 2020-05-27 16:53:06.137 [main]  - The application started
+[WARN ] 2020-05-27 16:53:06.146 [main]  - Incorrect sex Boy
+[WARN ] 2020-05-27 16:53:06.150 [main]  - Incorrect number of children -4
+[WARN ] 2020-05-27 16:53:06.151 [main]  - Incorrect domestic animal Dear
+[INFO ] 2020-05-27 16:53:06.151 [main]  - Citizen John Doe added
+[INFO ] 2020-05-27 16:53:06.151 [main]  - Citizen Vasia Pupkin added
+[INFO ] 2020-05-27 16:53:06.152 [main]  - Citizen Jane Air added
+[CUSTOMER] 2020-05-27 16:53:21.320 [main]  - The application started
+[WARN ] 2020-05-27 16:53:21.329 [main]  - Incorrect sex Boy
+[WARN ] 2020-05-27 16:53:21.330 [main]  - Incorrect number of children -4
+[WARN ] 2020-05-27 16:53:21.331 [main]  - Incorrect domestic animal Dear
+[INFO ] 2020-05-27 16:53:21.331 [main]  - Citizen John Doe added
+[INFO ] 2020-05-27 16:53:21.331 [main]  - Citizen Vasia Pupkin added
+[INFO ] 2020-05-27 16:53:21.331 [main]  - Citizen Jane Air added
+[CUSTOMER] 2020-05-27 17:01:06.532 [main]  - The application started
+[WARN ] 2020-05-27 17:01:06.581 [main]  - Incorrect sex Boy
+[WARN ] 2020-05-27 17:01:06.583 [main]  - Incorrect number of children -4
+[WARN ] 2020-05-27 17:01:06.583 [main]  - Incorrect domestic animal Dear
+[INFO ] 2020-05-27 17:01:06.584 [main]  - Citizen John Doe added
+[INFO ] 2020-05-27 17:01:06.584 [main]  - Citizen Vasia Pupkin added
+[INFO ] 2020-05-27 17:01:06.584 [main]  - Citizen Jane Air added
+[CUSTOMER] 2020-05-27 17:02:51.681 [main]  - The application started
+[WARN ] 2020-05-27 17:02:51.689 [main]  - Incorrect sex Boy
+[WARN ] 2020-05-27 17:02:51.690 [main]  - Incorrect number of children -4
+[WARN ] 2020-05-27 17:02:51.690 [main]  - Incorrect domestic animal Dear
+[INFO ] 2020-05-27 17:02:51.690 [main]  - Citizen John Doe added
+[INFO ] 2020-05-27 17:02:51.690 [main]  - Citizen Vasia Pupkin added
+[INFO ] 2020-05-27 17:02:51.691 [main]  - Citizen Jane Air added
