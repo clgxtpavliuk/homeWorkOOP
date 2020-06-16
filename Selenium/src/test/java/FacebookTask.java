@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,12 +16,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class FacebookTask {
 
     private static WebDriver driver;
-
-    @Test
-    public void login() throws InterruptedException {
+    @BeforeAll
+    public static void setUp() {
         String exePath = "C:\\Users\\Tetiana_Pavliuk\\My_folder\\Java\\chromedriver_win32\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", exePath);
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+    @Test
+    public void loginTest() throws InterruptedException {
         String url = "http://facebook.com";
         String login = "TesterJavaTraining";
         String pass = "q1w2e3r4";
@@ -37,7 +42,8 @@ public class FacebookTask {
     }
 
     @AfterAll
-    public static void quitDriver() {
+    public static void tearDown()
+    {
         driver.quit();
     }
 }
