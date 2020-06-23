@@ -31,7 +31,7 @@ public class HoverTask {
     }
 
     @Test
-    public void dragDrop() throws InterruptedException, IOException {
+    public void test() throws InterruptedException, IOException {
 
         String url = "http://demoqa.com/tool-tips";
 
@@ -72,43 +72,6 @@ public class HoverTask {
             System.out.println("Hover on numbers is working as defined");
         } else {System.out.println("Hover on numbers is not working as defined");}
 
-    }
-
-    @Test
-    public void select() throws InterruptedException, IOException {
-
-        String url = "http://demoqa.com/selectable/";
-
-        driver.get(url);
-
-        WebElement first = driver.findElement(By.xpath("//*[@id=\"verticalListContainer\"]/li[1]"));
-        WebElement second = driver.findElement(By.xpath("//*[@id=\"verticalListContainer\"]/li[2]"));
-        WebElement third = driver.findElement(By.xpath("//*[@id=\"verticalListContainer\"]/li[4]"));
-        first.click();
-        second.click();
-        third.click();
-        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File(first.getText() + second.getText() + third.getText() + System.currentTimeMillis() + ".png"));
-    }
-
-    @Test
-    public void resize() throws InterruptedException, IOException {
-
-        String url = "http://demoqa.com/resizable/";
-        driver.get(url);
-        Actions actions = new Actions(driver);
-        WebElement rectangle = driver.findElement(By.xpath("//*[@id=\"resizableBoxWithRestriction\"]"));
-        WebElement moveRect = driver.findElement(By.xpath("//*[@id=\"resizableBoxWithRestriction\"]/span"));
-
-        System.out.println("Size" + rectangle.getSize());
-
-        actions.clickAndHold(moveRect).moveByOffset(100, 100).release().build().perform();
-
-        System.out.println("Size after making bigger" + rectangle.getSize());
-
-        actions.clickAndHold(moveRect).moveByOffset(-90, -90).release().build().perform();
-
-        System.out.println("Size after making smaller" + rectangle.getSize());
     }
 
     @AfterAll
