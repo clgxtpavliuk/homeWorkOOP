@@ -11,6 +11,7 @@ public class Citizen {
     private int children;
 
     public int getChildren() {
+
         return children;
     }
 
@@ -19,6 +20,7 @@ public class Citizen {
     }
 
     public String getName() {
+
         return name;
     }
 
@@ -43,6 +45,7 @@ public class Citizen {
     }
 
     public DomesticAnimal getDomesticAnimal() {
+
         return domesticAnimal;
     }
 
@@ -55,6 +58,7 @@ public class Citizen {
         final StringBuilder sb = new StringBuilder(" Citizen: ");
         sb.append(name).append(' ');
         sb.append(surname);
+
         return sb.toString();
     }
 }

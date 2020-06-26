@@ -12,9 +12,11 @@ public enum DomesticAnimal {
     public static DomesticAnimal valueOfDomesticAnimal(String label) {
         for (DomesticAnimal e : values()) {
             if (e.value.equals(label)) {
+
                 return e;
             }
         }
+
         return null;
     }
 }

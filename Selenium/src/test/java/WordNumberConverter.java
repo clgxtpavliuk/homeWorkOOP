@@ -24,6 +24,7 @@ public class WordNumberConverter {
         if (input != null) {
             output = map.get(input);
         }
+
         return output;
     }
 }
