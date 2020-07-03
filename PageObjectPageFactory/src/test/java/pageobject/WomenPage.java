@@ -14,13 +14,9 @@ public class WomenPage extends Page {
     @CacheLookup
     public List<WebElement> colors;
 
-    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li")
+    @FindBy(xpath = "//*[@class=\"color_to_pick_list clearfix\"]/li/a")
     @CacheLookup
-    public List<WebElement> dresses;
-
-    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/p")
-    @CacheLookup
-    public WebElement loadElement;
+    public List<WebElement> dressesColor;
 
     public WomenPage(WebDriver driver) {
         PageFactory.initElements(driver, this);

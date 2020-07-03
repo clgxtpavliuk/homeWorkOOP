@@ -21,8 +21,8 @@ public class Waiters {
         wait.until(ExpectedConditions.urlToBe(automation_site_url));
     }
 
-    public static void waitForLoading(WebDriver driver, WebElement loadElement) {
+    public static void waitForLoading(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Waiters.WAIT_60);
-        wait.until(ExpectedConditions.invisibilityOf(loadElement));
+        wait.until(ExpectedConditions.attributeToBeNotEmpty(element, "style"));
     }
 }

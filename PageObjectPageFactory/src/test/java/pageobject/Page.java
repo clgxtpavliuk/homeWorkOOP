@@ -1,6 +1,6 @@
 package pageobject;
 
-import org.jetbrains.annotations.NotNull;
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +17,7 @@ public class Page {
     public Page(WebDriver driver) {
         this.driver = driver;
         System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
+        driver.manage().window().maximize();
     }
 
     public Page() {
@@ -30,27 +31,31 @@ public class Page {
         this.driver = driver;
     }
 
-    public FailInfo compareColor(List<WebElement> colors, List<WebElement> dresses, WebElement loadElement) {
+    public FailInfo compareColor(List<WebElement> colors, List<WebElement> dressesColor) {
+
         for (WebElement elem : colors) {
+            int counter = 0;
             String count = getCount(elem);
             String color = getColor(elem);
-            chooseColor(elem);
-            waitForLoading(driver, loadElement);
+            String style = getStyle(elem.findElement(By.xpath("input")));
 
-            if (Integer.parseInt(count) != getDressesCount(dresses)) {
+            for (WebElement el: dressesColor) {
+                waitForLoading(driver, el);
+                String styleDress = getStyle(el);
+                if (StringUtils.equals(style, styleDress)) {
+                    counter++;
+                }
+            }
+            if (Integer.parseInt(count) != counter) {
                 testResult.setCount(testResult.getCount() + 1);
-                testResult.getInfo().add("The color " + color + "has incorrect value");
+                testResult.getInfo().add("The color " + color + "has incorrect value, should be" + counter);
             }
         }
         return testResult;
     }
 
-    private int getDressesCount(List<WebElement> dresses) {
-        return dresses.size();
-    }
-
-    private void chooseColor(WebElement elem) {
-        elem.findElement(By.xpath("input")).click();
+    private String getStyle(WebElement input) {
+        return input.getAttribute("style");
     }
 
     private String getColor(WebElement elem) {
@@ -64,6 +69,4 @@ public class Page {
         count = elem.findElement(By.xpath("label/a/span")).getText().replace("(", "").replace(")", "");
         return count;
     }
-
-
 }
