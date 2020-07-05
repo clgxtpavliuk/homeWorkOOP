@@ -25,4 +25,9 @@ public class Waiters {
         WebDriverWait wait = new WebDriverWait(driver, Waiters.WAIT_60);
         wait.until(ExpectedConditions.attributeToBeNotEmpty(element, "style"));
     }
+
+    public static void waitForVisibility(WebDriver driver, WebElement prRange) {
+        WebDriverWait wait = new WebDriverWait(driver, Waiters.WAIT_60);
+        wait.until(ExpectedConditions.visibilityOf(prRange));
+    }
 }

@@ -1,16 +1,23 @@
 package pageobject;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import tests.Patterns_HomeTask2;
 import utils.FailInfo;
+import utils.PriceInfo;
+import utils.PriceParser;
 
-import java.util.List;
+import java.util.*;
 
 import static utils.Waiters.waitForLoading;
+import static utils.Waiters.waitForVisibility;
 
 public class Page {
+    private static Logger logger = LogManager.getLogger(Page.class);
     WebDriver driver;
     private FailInfo testResult = new FailInfo();
 
@@ -39,7 +46,7 @@ public class Page {
             String color = getColor(elem);
             String style = getStyle(elem.findElement(By.xpath("input")));
 
-            for (WebElement el: dressesColor) {
+            for (WebElement el : dressesColor) {
                 waitForLoading(driver, el);
                 String styleDress = getStyle(el);
                 if (StringUtils.equals(style, styleDress)) {
@@ -68,5 +75,34 @@ public class Page {
         String count;
         count = elem.findElement(By.xpath("label/a/span")).getText().replace("(", "").replace(")", "");
         return count;
+    }
+
+    public FailInfo checkMinMaxPrice(WebElement prRange, List<WebElement> prices) {
+
+        waitForVisibility(driver, prRange);
+
+        String priceRange = prRange.getText();
+        logger.info("Price Range {}", priceRange);
+        PriceInfo priceRangeInfo = PriceParser.parsePriceRange(priceRange);
+
+        List<Double> pricesDouble = new ArrayList<Double>();
+
+        for (WebElement elem : prices) {
+            waitForVisibility(driver, elem);
+            pricesDouble.add(PriceParser.parsePrice(elem.getText()));
+        }
+
+        DoubleSummaryStatistics statistics = pricesDouble.stream().mapToDouble(Double::doubleValue).summaryStatistics();
+        double minPrice = statistics.getMin();
+        double maxPrice = statistics.getMax();
+
+        logger.info("Min price on the page {}", minPrice);
+        logger.info("Max price on the page {}", maxPrice);
+
+        if (minPrice < priceRangeInfo.getMinPrice() || maxPrice > priceRangeInfo.getMaxPrice()) {
+            testResult.setCount(testResult.getCount() + 1);
+            testResult.getInfo().add("Price range is nit correct" + minPrice + "- should be Min Price" + maxPrice + "- should be Max Price");
+        }
+        return testResult;
     }
 }

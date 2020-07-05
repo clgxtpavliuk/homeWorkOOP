@@ -18,6 +18,15 @@ public class DressesPage extends Page {
     @CacheLookup
     public List<WebElement> dressesColor;
 
+    @FindBy(xpath = "//*[@id=\"layered_price_range\"]")
+    @CacheLookup
+    public WebElement pricesRange;
+
+    @FindBy(xpath = "//p[@class=\"product-desc\"]/following-sibling::div/span[@class=\"price product-price\"]")
+    @CacheLookup
+    public List<WebElement> prices;
+
+
     public DressesPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
