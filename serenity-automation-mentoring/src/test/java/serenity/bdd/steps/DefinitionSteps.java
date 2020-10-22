@@ -22,7 +22,7 @@ public class DefinitionSteps {
         endUser.looks_for(word);
     }
 
-    @Then("they should see the definition '$definition'")
+    @Then("the definition is equals to '$definition'")
     public void thenTheyShouldSeeADefinitionContainingTheWords(String definition) {
         endUser.should_see_definition(definition);
     }
