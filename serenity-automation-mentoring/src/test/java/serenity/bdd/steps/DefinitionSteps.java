@@ -1,8 +1,5 @@
 package serenity.bdd.steps;
 
-import endpoints.PetStorePetEndpoint;
-import io.restassured.response.Response;
-import models.Pet;
 import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
