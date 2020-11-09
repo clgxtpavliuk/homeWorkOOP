@@ -1,8 +1,5 @@
 package serenity.bdd.steps;
 
-import endpoints.PetStorePetEndpoint;
-import io.restassured.response.Response;
-import models.Pet;
 import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
@@ -30,33 +27,4 @@ public class DefinitionSteps {
         endUser.should_see_definition(definition);
     }
 
-    @Given("Barsic is created")
-    public void givenBarsicIsCreated() {
-        endUser.createBarsik();
-    }
-
-    @When("we get the response of creation on the endpoint")
-    public void whenWeGetTheResponseOfCreationOnTheEndpoint() {
-        endUser.createPet();
-    }
-
-    @Then("we verify that created pet is Barsic")
-    public void thenWeVerifyThatCreatedPetIsBarsic() {
-        endUser.verifyPet();
-    }
-
-    @Given("the pet is created")
-    public void givenThePetIsCreated() {
-        endUser.createPetForUpdate();
-    }
-
-    @When("the user updates pet")
-    public void whenTheUserUpdatesPet() {
-        endUser.createPet();
-    }
-
-    @Then("the pet is updated")
-    public void thePetIsUpdated() {
-        endUser.checkUpdatePet();
-    }
 }
