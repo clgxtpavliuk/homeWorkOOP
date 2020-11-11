@@ -1,7 +1,7 @@
 /*.bat
 /*.lnk
 /bin/
-/tagret/
+/target/
 .classpath
 .project
 .metadata/
