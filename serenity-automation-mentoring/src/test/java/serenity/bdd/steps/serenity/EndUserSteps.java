@@ -1,5 +1,6 @@
 package serenity.bdd.steps.serenity;
 
+import org.assertj.core.api.Assertions;
 import serenity.bdd.pages.DictionaryPage;
 import net.thucydides.core.annotations.Step;
 import com.google.common.collect.ImmutableList;
@@ -17,6 +18,7 @@ import static org.hamcrest.Matchers.hasItem;
 public class EndUserSteps {
     private static Pet barsik;
     private long createdPetId;
+    private Pet createdPetFromService;
     public static final endpoints.PetStorePetEndpoint PET_STORE_PET_ENDPOINT = new PetStorePetEndpoint();
     private Response response;
 
@@ -106,5 +108,24 @@ public class EndUserSteps {
         assertions.assertThat(createdPetFromService.getName()).as("Name").isEqualTo(barsik.getName());
         assertions.assertThat(createdPetFromService.getStatus()).as("Status").isEqualTo(barsik.getStatus());
         assertions.assertAll();
+    }
+
+    @Step
+    public void createPetForDelete() {
+        Pet barsik = Pet.createBarsik();
+        Response petResponse = PET_STORE_PET_ENDPOINT.createPet(barsik);
+        long createdPetId = petResponse.body().as(Pet.class).getId();
+        createdPetFromService = PET_STORE_PET_ENDPOINT.getPetById(String.valueOf(createdPetId)).body().as(Pet.class);
+    }
+
+    @Step
+    public void deletePet() {
+        PET_STORE_PET_ENDPOINT.deleteById(createdPetFromService.getId());
+    }
+
+    @Step
+    public void checkDeletePet() {
+        Response petById = PET_STORE_PET_ENDPOINT.getPetById(String.valueOf(createdPetFromService.getId()));
+        Assertions.assertThat(petById.getStatusCode()).isEqualTo(404);
     }
 }

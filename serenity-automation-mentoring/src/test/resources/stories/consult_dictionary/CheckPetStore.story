@@ -14,3 +14,8 @@ Scenario: Updating the pet
 Given the pet is created
 When the user updates pet
 Then the pet is updated
+
+Scenario: Delete the pet
+Given the user creates pet
+When the user deletes pet
+Then the search for pet returns 404
