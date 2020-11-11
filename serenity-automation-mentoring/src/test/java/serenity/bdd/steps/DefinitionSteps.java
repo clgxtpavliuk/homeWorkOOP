@@ -4,9 +4,6 @@ import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
-import endpoints.PetStorePetEndpoint;
-import io.restassured.response.Response;
-import models.Pet;
 
 import serenity.bdd.steps.serenity.EndUserSteps;
 
